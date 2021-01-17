@@ -92,7 +92,7 @@
             </ul>
         </div>
         @endif
-            <form class="my-4 reg-form p-4" method="POST" action="{{route('addEvent')}}">
+            <form class="my-4 reg-form p-4" method="POST" action="{{route('addEvent.store')}}" enctype="multipart/form-data">
             @csrf 
                 <div class="row">
                     <div class="col-md-4">

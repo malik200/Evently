@@ -52,10 +52,10 @@
 
               <ul class="navbar-nav">
                 <li class="nav-item mx-1">
-                    <a href="{{route('login')}}" class="btn btn-primary">SIGN IN</a>
+                    <a href="{{route('register')}}" class="btn btn-primary">SIGNUP</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a href="{{route('register')}}" class="btn btn-success">SIGN UP</a>
+                    <a href="{{route('login')}}" class="btn btn-success">SIGNIN</a>
                 </li>
               </ul>
             </div>
@@ -71,15 +71,16 @@
             <div class="showcase-content">
                 <h1 class="display1 text-center">Find Upcoming Events Around You</h1>
                 <p class="lead text-center my-4">Conference, Wedding, Seminar or Music Fest. This is the place for you!</p>
-                <form class="form-inline">
+                <form method="get" action="{{route('search')}}" class="form-inline">
                     <div class="form-group my-3">
-                        <input style="width: 300px;" class="form-control" type="text" placeholder="Search Events">
+                        <input style="width: 300px;" class="form-control" type="text" name="search" placeholder="Search Events">
                         <button type="submit" class="btn btn-primary mx-md-2">Search</button>
                     </div>
                 </form>
             </div>
         </div>
     </header>
+
     
     <!-- === === === === === === === === === Showcase End === === === === === === === === === -->
 
@@ -88,99 +89,31 @@
 
     <section id="events" class="my-4">
         <div class="container">
+         
             <div class="events-content m-auto">
+
                 <h3 class="text-center mb-5"> <span class="text-info font-weight-bold cursive">Upcoming</span> Events Around You Today</h3>
                 <div class="row">
+                    
+                    @foreach($events as $event)
                     <div class="col-md-4 col-xs-4 event my-4">
                         <div class="calendar text-white font-weight-bold mx-1">
-                            <div class="month bg-info p-1 text-center">DEC</div>
-                            <div class="day bg-light p-1 text-info text-center">12</div>
+                        <time datetime="{{ $event->start_date->format('d-m-Y') }}">
+                            <div class="month bg-info p-1 text-center">{{ $event->start_date->format('M') }}</div>
+                            <div class="day bg-light p-1 text-info text-center">{{ $event->start_date->day }}</div>
                         </div>
                         <div class="details py-1 mx-1">
-                            <a href="#" class="text-primary">ASUU & FG MEETING</a>
-                            <p class="icons mt-1"><i class="fas fa-search-location"></i>Lagos, NGR.  <i class="far fa-calendar-alt"></i> Dec/12/2020</p>
+                            <a href="#" class="text-primary">{{$event->event_name}}</a>
+                            <p class="icons mt-1"><i class="fas fa-search-location"></i> {{$event->city}}, {{$event->state}}.  <i class="far fa-calendar-alt"></i> {{$event->start_date->toFormattedDateString()}}</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-xs-4 event my-4">
-                        <div class="calendar text-white font-weight-bold mx-1">
-                            <div class="month bg-info p-1 text-center">DEC</div>
-                            <div class="day bg-light p-1 text-info text-center">22</div>
-                        </div>
-                        <div class="details py-1 mx-1">
-                            <a href="#">Davido Concert</a>
-                            <p class="icons mt-1"><i class="fas fa-search-location"></i>Lagos, NGR.  <i class="far fa-calendar-alt"></i> Dec/22/2020</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-xs-4 event my-4">
-                        <div class="calendar text-white font-weight-bold mx-1">
-                            <div class="month bg-info p-1 text-center">JAN</div>
-                            <div class="day bg-light p-1 text-info text-center">4</div>
-                        </div>
-                        <div class="details py-1 mx-1">
-                            <a href="#">Leaders Seminar 2021</a>
-                            <p class="icons mt-1"><i class="fas fa-search-location"></i>Lagos, NGR.  <i class="far fa-calendar-alt"></i> Jan/04/2021</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 event my-4">
-                        <div class="calendar text-white font-weight-bold mx-1">
-                            <div class="month bg-info p-1 text-center">DEC</div>
-                            <div class="day bg-light p-1 text-info text-center">12</div>
-                        </div>
-                        <div class="details py-1 mx-1">
-                            <a href="#">ASUU & FG MEETING</a>
-                            <p class="icons mt-1"><i class="fas fa-search-location"></i>Lagos, NGR.  <i class="far fa-calendar-alt"></i> Dec/20/2020</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 event my-4">
-                        <div class="calendar text-white font-weight-bold mx-1">
-                            <div class="month bg-info p-1 text-center">DEC</div>
-                            <div class="day bg-light p-1 text-info text-center">12</div>
-                        </div>
-                        <div class="details py-1 mx-1">
-                            <a href="#">Google Meetup</a>
-                            <p class="icons mt-1"><i class="fas fa-search-location"></i>Lagos, NGR.  <i class="far fa-calendar-alt"></i> Dec/20/2020</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 event my-4">
-                        <div class="calendar text-white font-weight-bold mx-1">
-                            <div class="month bg-info p-1 text-center">DEC</div>
-                            <div class="day bg-light p-1 text-info text-center">12</div>
-                        </div>
-                        <div class="details py-1 mx-1">
-                            <a href="#">ASUU & FG MEETING</a>
-                            <p class="icons mt-1"><i class="fas fa-search-location"></i>Lagos, NGR.  <i class="far fa-calendar-alt"></i> Dec/20/2020</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 event my-4">
-                        <div class="calendar text-white font-weight-bold mx-1">
-                            <div class="month bg-info p-1 text-center">DEC</div>
-                            <div class="day bg-light p-1 text-info text-center">12</div>
-                        </div>
-                        <div class="details py-1 mx-1">
-                            <a href="#">ASUU & FG MEETING</a>
-                            <p class="icons mt-1"><i class="fas fa-search-location"></i>Lagos, NGR.  <i class="far fa-calendar-alt"></i> Dec/20/2020</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 event my-4">
-                        <div class="calendar text-white font-weight-bold mx-1">
-                            <div class="month bg-info p-1 text-center">DEC</div>
-                            <div class="day bg-light p-1  text-info text-center">12</div>
-                        </div>
-                        <div class="details py-1 mx-1">
-                            <a href="#">ASUU & FG MEETING</a>
-                            <p class="icons mt-1"><i class="fas fa-search-location"></i>Lagos, NGR.  <i class="far fa-calendar-alt"></i> Dec/20/2020</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 event my-4">
-                        <div class="calendar text-white font-weight-bold mx-1">
-                            <div class="month bg-info p-1 text-center">DEC</div>
-                            <div class="day bg-light p-1 text-info text-center">12</div>
-                        </div>
-                        <div class="details py-1 mx-1">
-                            <a href="#">ASUU & FG MEETING</a>
-                            <p class="icons mt-1"><i class="fas fa-search-location"></i>Lagos, NGR.  <i class="far fa-calendar-alt"></i> Dec/20/2020</p>
-                        </div>
-                    </div>
+                    @endforeach
+                
+                    
+                   
+                    
+                    
+                    
                     <a href="{{route('addEvent')}}" class="mx-auto mt-3 btn btn-lg btn-primary">Submit an event</a>
                 </div>
             </div>
