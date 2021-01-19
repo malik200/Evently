@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
@@ -72,8 +73,9 @@ class EventController extends Controller
   
     public function eventDetail($id){
         $event = Event::findOrFail($id);
+        $user = User::get();
  
-        return view('event-detail')->with('event' , $event);
+        return view('event-detail')->with('event' , $event)->with('user', $user);
 }
 
 public function search(Request $request){

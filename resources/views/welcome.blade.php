@@ -97,15 +97,17 @@
                     
                     @foreach($events as $event)
                     <div class="col-md-4 col-xs-4 event my-4">
+                    <a href="{{route('event.detail', ['id' => $event->id])}}">
                         <div class="calendar text-white font-weight-bold mx-1">
                         <time datetime="{{ $event->start_date->format('d-m-Y') }}">
                             <div class="month bg-info p-1 text-center">{{ $event->start_date->format('M') }}</div>
                             <div class="day bg-light p-1 text-info text-center">{{ $event->start_date->day }}</div>
                         </div>
                         <div class="details py-1 mx-1">
-                            <a href="#" class="text-primary">{{$event->event_name}}</a>
+                            <a href="{{route('event.detail', ['id' => $event->id])}}" class="text-primary">{{$event->event_name}}</a>
                             <p class="icons mt-1"><i class="fas fa-search-location"></i> {{$event->city}}, {{$event->state}}.  <i class="far fa-calendar-alt"></i> {{$event->start_date->toFormattedDateString()}}</p>
                         </div>
+                    </a>
                     </div>
                     @endforeach
                 

@@ -171,7 +171,7 @@
                         </div>
                     </div>
                     <hr>
-                    <!-- Organization Type -->
+                    <!-- Organization Type
                     <div class="row pb-3">
                         <div class="col-4">
                             <p class="text-info">Organization Type:</p>
@@ -180,8 +180,8 @@
                             <p></p>
                         </div>
                     </div>
-                    <hr>
-                    <!-- Related Industries -->
+                    <hr> -->
+                    <!-- Related Industries
                     <div class="row pb-3">
                         <div class="col-4">
                             <p class="text-info">Related Industries:</p>
@@ -193,7 +193,7 @@
                             <p>Lifestyle</p>
                         </div>
                     </div>
-                    <hr>
+                    <hr> -->
                     <!-- Featured Speakers -->
                     <div class="row pb-3">
                         <div class="col-4">
@@ -219,8 +219,7 @@
                 <div class="tab-pane fade" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
 
                     <div class="py-5">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, illum molestiae voluptate architecto a inventore eveniet veritatis natus fugiat, tempore consectetur odio cum qui, laudantium quidem ex repudiandae eaque. Esse illum eligendi libero, voluptates officia laudantium distinctio nulla, impedit suscipit velit exercitationem perspiciatis iste, at ratione alias facere odit minima totam accusantium magni? Sunt, laudantium aliquid? Corrupti excepturi voluptatibus modi, minus quasi aliquam rem sint vero aspernatur eaque! Beatae accusamus quasi ullam corrupti fugit explicabo, nam aspernatur in error sapiente eligendi ipsam atque laudantium illo optio ut quidem praesentium libero quod iste ratione saepe! Id atque laborum corrupti tempora eum!</p>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum recusandae facilis sint omnis. Vero accusamus odio dolore sunt tempora aperiam maxime est quia provident modi explicabo eaque, quibusdam, at dolorem adipisci in eveniet ullam nisi totam deserunt itaque quos aut, qui officiis. Dolorem consectetur repellendus voluptate neque dignissimos. Enim, expedita ex aperiam perferendis aut nisi unde, deserunt qui optio, quae suscipit excepturi accusamus modi quasi adipisci magnam dignissimos? Quia, facilis.</p>
+                        <p>{{$event->event_description}}</p>
                     </div>
 
                 </div>

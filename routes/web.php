@@ -22,7 +22,7 @@ Route::get('/add_event', [EventController::class, 'create'])->middleware('auth')
 
 Route::post('/add_event', [EventController::class, 'store'])->middleware('auth')->name('addEvent.store');
 
-Route::get('/event/{id}/detail', [EventController::class, 'eventDetail'])->middleware('auth')->name('event.detail');
+Route::get('/event/{id}/detail', [EventController::class, 'eventDetail'])->name('event.detail');
 
 Route::get('/dashboard', [EventController::class, 'home'])->middleware(['auth'])->name('dashboard');
 
